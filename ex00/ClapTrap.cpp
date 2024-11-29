@@ -27,7 +27,6 @@ ClapTrap& ClapTrap::operator=(ClapTrap& other)
         this->damage = other.damage;
     }
     return *this;
-    
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -78,5 +77,4 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     else
         std::cout << B_W "ClapTrap " RST << this->name << " doesn't have enough energy to be repaired itself\n";
-    
 }

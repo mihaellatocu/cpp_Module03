@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-src = main.cpp ClapTrap.cpp
+src = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ_F = ./obj
 obj = $(src:%.cpp=$(OBJ_F)/%.o)
 

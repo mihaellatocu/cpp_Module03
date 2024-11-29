@@ -1,11 +1,10 @@
 #include "ClapTrap.hpp"
 
-
 int main()
 {
     ClapTrap a("miha");
     ClapTrap b("tony");
-   // b = a;
+    
     a.attack("tony");
     b.takeDamage(2);//8
     a.attack("tony");
@@ -22,8 +21,7 @@ int main()
     a.takeDamage(4);
     b.attack("miha");
     a.takeDamage(0);
-    // std::cout << "a damage " << a.damage << "\n";
-    // std::cout << "b damage " << b.damage << "\n";
-    std::cout << "deconstructing\n";
+
+    std::cout <<BOLD_BLUE "Deconstructing\n" RST;
     return (0);
 }
