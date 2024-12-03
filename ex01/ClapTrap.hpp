@@ -6,7 +6,7 @@
 /*   By: mtocu <mtocu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:07:59 by mtocu             #+#    #+#             */
-/*   Updated: 2024/11/29 13:46:17 by mtocu            ###   ########.fr       */
+/*   Updated: 2024/12/03 11:30:16 by mtocu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ class ClapTrap
 protected:
     std::string name;
     unsigned int health; //hit ~ life point
-    int energy;
-    int damage;
+    unsigned int energy;
+    unsigned int damage;
    
 public:
     ClapTrap();
@@ -55,6 +55,5 @@ public:
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-
 };
 

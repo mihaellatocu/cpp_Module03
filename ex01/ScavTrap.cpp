@@ -7,7 +7,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    //ClapTrap::name = name;
+    //ClapTrap::name = name; // used only if overwride
     // ClapTrap::health = 30;
     // ClapTrap::energy = 25;
     // ClapTrap::damage = 15;
@@ -15,10 +15,10 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap destructor called.\n";
+    std::cout << "Destructor for ScavTrap " << name << " called.\n";
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap is now in Gatekeeper mode.\n";
+    std::cout <<B_W "ScavTrap " RST<< name << " is now in Gatekeeper mode.\n";
 }

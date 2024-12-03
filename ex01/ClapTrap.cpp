@@ -14,7 +14,7 @@ ClapTrap::ClapTrap()
     this->health = 100; //hit = life point
     this->energy = 50;
     this->damage = 20;
-    std::cout << "Default Constructor called\n";
+    std::cout << "ClapTrap default Constructor called\n";
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap& other)
@@ -35,12 +35,12 @@ ClapTrap::ClapTrap(std::string name)
     this->health = 100; //hit = life point
     this->energy = 50;
     this->damage = 20;
-    std::cout <<B_W "Default Constructor with argument " RST <<this->name << " has been called\n";
+    std::cout <<B_W "ClapTrap default Constructor with argument " RST <<this->name << " has been called\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout <<B_W "Destructor for " RST<< this->name << " called.\n";
+    std::cout <<B_W "Destructor for ClapTrap " RST<< this->name << " called.\n";
 }
 
 
@@ -64,9 +64,8 @@ void ClapTrap::takeDamage(unsigned int amount)
         std::cout <<  B_W "ClapTrap " RST << this->name << " take damage " << amount << ", remaining " << this->health 
         <<" points of health, energy level: " << this->energy << std::endl;
     }
-    if (this->health == 0)
-        std::cout << B_W "ClapTrap " RST << this->name << " is dead\n";
-        
+    if (this->health == 0 || this->health < amount)
+        std::cout << B_W "ClapTrap " RST << this->name << " is dead\n";     
 }
         
 void ClapTrap::beRepaired(unsigned int amount)
