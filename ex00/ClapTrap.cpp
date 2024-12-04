@@ -1,11 +1,12 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(ClapTrap& other)
+ClapTrap::ClapTrap(const ClapTrap& other)
 {
     name = other.name; // sau this->name
     health = other.health;
     energy = other.energy;
     damage = other.damage;
+    std::cout << "ClapTrap copy constructor called.\n";
 }
 
 ClapTrap::ClapTrap()
@@ -14,10 +15,10 @@ ClapTrap::ClapTrap()
     this->health = 10; //hit = life point
     this->energy = 10;
     this->damage = 0;
-    std::cout << "Default Constructor called\n";
+    std::cout << "ClapTrap Default Constructor called\n";
 }
 
-ClapTrap& ClapTrap::operator=(ClapTrap& other)
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
     {
@@ -26,6 +27,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap& other)
         this->energy = other.energy;
         this->damage = other.damage;
     }
+    std::cout << "ClapTrap copy assigned operator called.\n";
     return *this;
 }
 
@@ -35,12 +37,12 @@ ClapTrap::ClapTrap(std::string name)
     this->health = 10; //hit = life point
     this->energy = 10;
     this->damage = 0;
-    std::cout <<B_W "Default Constructor with argument " RST <<this->name << " has been called\n";
+    std::cout <<B_W "ClapTrap Default Constructor with argument " RST <<this->name << " has been called\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout <<B_W "Destructor for " RST<< this->name << " called.\n";
+    std::cout <<B_W "ClapTrap Destructor for " RST<< this->name << " called.\n";
 }
 
 

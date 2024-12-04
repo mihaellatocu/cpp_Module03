@@ -14,11 +14,12 @@ int main()
     d = c;
     e = f;
     
-    d.attack("unu");
+    d.attack("sara");
     d.takeDamage(5);
     d.beRepaired(10);
    
     c.guardGate();
+    e.takeDamage(120);
     e.takeDamage(12);
     f.highFivesGuys();
 

@@ -6,11 +6,12 @@
 /*   By: mtocu <mtocu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:07:59 by mtocu             #+#    #+#             */
-/*   Updated: 2024/12/03 15:44:47 by mtocu            ###   ########.fr       */
+/*   Updated: 2024/12/04 12:41:26 by mtocu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#pragma once
 
 #define RST "\033[0m"    /* Reset to default color */
 #define BOLD "\033[1m"   /* Bold */
@@ -38,11 +39,11 @@
 
 class ClapTrap
 {
-private:
+protected:
     std::string name;
     unsigned int health; //hit ~ life point
-    int energy;
-    int damage;
+    unsigned int energy;
+    unsigned int damage;
    
 public:
     ClapTrap();
@@ -55,6 +56,5 @@ public:
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-
 };
 

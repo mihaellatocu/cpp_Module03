@@ -1,23 +1,33 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(ClapTrap& other)
+ClapTrap::ClapTrap()
+{
+    this->name = "default";
+    this->health = 100; //hit = life point
+    this->energy = 10;
+    this->damage = 0;
+    std::cout << "ClapTrap default Constructor called\n";
+}
+
+ClapTrap::ClapTrap(std::string name)
+{
+    this->name = name;
+    this->health = 100; //hit = life point
+    this->energy = 10;
+    this->damage = 0;
+    std::cout <<B_W "ClapTrap default Constructor with argument " RST <<this->name << " has been called\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
 {
     name = other.name; // sau this->name
     health = other.health;
     energy = other.energy;
     damage = other.damage;
+    std::cout << "ClapTrap copy constructor called.\n";
 }
 
-ClapTrap::ClapTrap()
-{
-    this->name = "default";
-    this->health = 100; //hit = life point
-    this->energy = 50;
-    this->damage = 20;
-    std::cout << "ClapTrap default Constructor called\n";
-}
-
-ClapTrap& ClapTrap::operator=(ClapTrap& other)
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
     {
@@ -26,16 +36,8 @@ ClapTrap& ClapTrap::operator=(ClapTrap& other)
         this->energy = other.energy;
         this->damage = other.damage;
     }
+    std::cout << "ClapTrap copy assigned operator called.\n";
     return *this;
-}
-
-ClapTrap::ClapTrap(std::string name)
-{
-    this->name = name;
-    this->health = 100; //hit = life point
-    this->energy = 50;
-    this->damage = 20;
-    std::cout <<B_W "ClapTrap default Constructor with argument " RST <<this->name << " has been called\n";
 }
 
 ClapTrap::~ClapTrap()
@@ -65,7 +67,10 @@ void ClapTrap::takeDamage(unsigned int amount)
         <<" points of health, energy level: " << this->energy << std::endl;
     }
     if (this->health == 0 || this->health < amount)
-        std::cout << B_W "ClapTrap " RST << this->name << " is dead\n";     
+    {
+        std::cout << B_W "ClapTrap " RST << this->name << " is dead\n";
+        this->health = 0;
+    }  
 }
         
 void ClapTrap::beRepaired(unsigned int amount)

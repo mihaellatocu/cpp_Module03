@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-    this->name = "Frag_Default";
+    //this->name = "Frag_Default";
     this->health = ClapTrap::health;
     this->energy = 100;
     this->damage = 30;
@@ -13,7 +13,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     this->name = name;
     this->health = ClapTrap::health;
-    this->energy = 100;
+    this->energy = 80;
     this->damage = 30;
     std::cout <<B_W "FragTrap Constructor " BOLD_CYAN<< name << RST " called\n";
 }

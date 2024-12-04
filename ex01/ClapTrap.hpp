@@ -6,7 +6,7 @@
 /*   By: mtocu <mtocu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:07:59 by mtocu             #+#    #+#             */
-/*   Updated: 2024/12/03 11:30:16 by mtocu            ###   ########.fr       */
+/*   Updated: 2024/12/03 15:52:11 by mtocu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ public:
     ClapTrap(std::string name);
     ~ClapTrap();
 
-    ClapTrap(ClapTrap& other);
-    ClapTrap& operator=(ClapTrap& other);
+    ClapTrap(const ClapTrap& other);
+    ClapTrap& operator=(const ClapTrap& other);
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);

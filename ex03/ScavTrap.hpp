@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
+#pragma once
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 private:
     
@@ -12,4 +13,5 @@ public:
     ~ScavTrap();
 
     void guardGate();
+    void attack(const std::string& target);
 };
